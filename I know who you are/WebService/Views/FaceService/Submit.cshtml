@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Submit</title>
+    <link href="~/Content/kendo.common-material.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo.material.min.css" rel="stylesheet" />
+
+    <script src="~/scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/scripts/kendo/kendo.all.min.js"></script>
+</head>
+<body>
+    <div>
+        <h4>Uploaded Result</h4>
+        @if (ViewBag.NullFile)
+        {
+            <h1>未選擇檔案</h1>
+        }
+        else if (ViewBag.WrongFileType)
+        {
+            <h1>檔案格式非jpg</h1>
+        }
+        else
+        {
+            <img src="data:image/jpg;base64, @ViewBag.Image" />
+        }
+
+        <p style="margin-top: 1em;">
+            @*<a href='@Url.Action("Index", "FaceService")' class="k-button k-primary">Go back</a>*@
+            <button onclick="closeWindow()">Close</button>
+        </p>
+    </div>
+
+    <script>
+        function closeWindow() {
+            if (confirm("Close Window?")) {
+                close();
+            }
+        }
+    </script>
+</body>
+</html>
