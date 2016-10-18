@@ -39,6 +39,6 @@ D:\Project\I know who you are\FaceService\bin\Debug\EntityFramework.xml
 D:\Project\I know who you are\FaceService\bin\Debug\EntityFramework.SqlServer.xml
 D:\Project\I know who you are\FaceService\bin\Debug\System.Data.SQLite.xml
 D:\Project\I know who you are\FaceService\bin\Debug\zh-Hant\Microsoft.VisualStudio.DebuggerVisualizers.resources.dll
-D:\Project\I know who you are\FaceService\obj\Debug\FaceService.csprojResolveAssemblyReference.cache
 D:\Project\I know who you are\FaceService\obj\Debug\FaceService.dll
 D:\Project\I know who you are\FaceService\obj\Debug\FaceService.pdb
+D:\Project\I know who you are\FaceService\obj\Debug\FaceService.csprojResolveAssemblyReference.cache

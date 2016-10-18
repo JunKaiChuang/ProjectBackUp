@@ -40,7 +40,7 @@
       <publishTime>02/05/2016 02:19:14</publishTime>
     </File>
     <File Include="bin/FaceService.dll">
-      <publishTime>10/08/2016 21:10:37</publishTime>
+      <publishTime>10/19/2016 02:24:31</publishTime>
     </File>
     <File Include="bin/libfacedetect-x64.dll">
       <publishTime>07/08/2016 01:09:10</publishTime>
@@ -160,7 +160,7 @@
       <publishTime>08/30/2016 13:57:45</publishTime>
     </File>
     <File Include="bin/WebService.dll">
-      <publishTime>10/08/2016 22:53:39</publishTime>
+      <publishTime>10/19/2016 02:26:17</publishTime>
     </File>
     <File Include="bin/x64/cvextern.dll">
       <publishTime>09/15/2016 17:05:57</publishTime>
@@ -1266,6 +1266,129 @@
     <File Include="Content/textures/transtexture.png">
       <publishTime>11/11/2015 10:43:48</publishTime>
     </File>
+    <File Include="Content/themes/base/accordion.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/all.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/autocomplete.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/base.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/button.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/core.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/datepicker.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/dialog.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/draggable.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_444444_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_555555_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_777620_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_777777_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cc0000_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_ffffff_256x240.png">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.min.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/menu.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/progressbar.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/resizable.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/selectable.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/selectmenu.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/slider.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/sortable.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/spinner.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/tabs.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/theme.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="Content/themes/base/tooltip.css">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
     <File Include="Content/Uniform/editor.png">
       <publishTime>11/11/2015 10:43:48</publishTime>
     </File>
@@ -1318,7 +1441,7 @@
       <publishTime>08/30/2016 13:57:45</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/08/2016 21:00:35</publishTime>
+      <publishTime>10/09/2016 12:29:38</publishTime>
     </File>
     <File Include="scripts/ai.0.22.19-build00125.js">
       <publishTime>09/01/2016 10:32:30</publishTime>
@@ -1327,7 +1450,7 @@
       <publishTime>09/01/2016 10:32:30</publishTime>
     </File>
     <File Include="scripts/Index.js">
-      <publishTime>10/08/2016 22:20:43</publishTime>
+      <publishTime>10/09/2016 20:31:18</publishTime>
     </File>
     <File Include="scripts/jquery-3.1.0.js">
       <publishTime>09/01/2016 10:34:09</publishTime>
@@ -1346,6 +1469,12 @@
     </File>
     <File Include="scripts/jquery-3.1.0.slim.min.map">
       <publishTime>09/01/2016 10:34:09</publishTime>
+    </File>
+    <File Include="scripts/jquery-ui-1.12.1.js">
+      <publishTime>10/09/2016 12:29:37</publishTime>
+    </File>
+    <File Include="scripts/jquery-ui-1.12.1.min.js">
+      <publishTime>10/09/2016 12:29:37</publishTime>
     </File>
     <File Include="scripts/jquery.blockUI.js">
       <publishTime>10/08/2016 21:00:35</publishTime>
@@ -3418,7 +3547,7 @@
       <publishTime>11/11/2015 10:43:48</publishTime>
     </File>
     <File Include="scripts/ManagementPage.js">
-      <publishTime>10/08/2016 21:08:31</publishTime>
+      <publishTime>10/09/2016 17:16:47</publishTime>
     </File>
     <File Include="styles/Black/editor.png">
       <publishTime>11/11/2015 10:43:48</publishTime>
@@ -4353,6 +4482,9 @@
     <File Include="styles/Silver/sprite_kpi_2x.png">
       <publishTime>11/11/2015 10:43:48</publishTime>
     </File>
+    <File Include="styles/submit.css">
+      <publishTime>10/19/2016 01:44:36</publishTime>
+    </File>
     <File Include="styles/textures/brushed-metal.png">
       <publishTime>11/11/2015 10:43:48</publishTime>
     </File>
@@ -4492,16 +4624,16 @@
       <publishTime>10/08/2016 18:44:59</publishTime>
     </File>
     <File Include="Views/FaceService/EditPerson.cshtml">
-      <publishTime>10/08/2016 20:23:18</publishTime>
+      <publishTime>10/16/2016 18:11:05</publishTime>
     </File>
     <File Include="Views/FaceService/Index.cshtml">
-      <publishTime>10/08/2016 21:50:48</publishTime>
+      <publishTime>10/19/2016 02:37:31</publishTime>
     </File>
     <File Include="Views/FaceService/ManagementPage.cshtml">
       <publishTime>10/08/2016 21:01:03</publishTime>
     </File>
     <File Include="Views/FaceService/Submit.cshtml">
-      <publishTime>10/08/2016 22:53:23</publishTime>
+      <publishTime>10/19/2016 02:26:14</publishTime>
     </File>
     <File Include="Views/web.config">
       <publishTime>09/01/2016 10:32:27</publishTime>

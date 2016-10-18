@@ -10,6 +10,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>EditPerson</title>
+    <link href="~/Content/kendo.common-material.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo.material.min.css" rel="stylesheet" />
+
+    <script src="~/scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/scripts/jquery.blockUI.js"></script>
+    <script src="~/scripts/kendo/kendo.all.min.js"></script>
 </head>
 <body>
     @using (Html.BeginForm())
@@ -23,7 +29,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.userId, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.userId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextBoxFor(model => model.userId, new { htmlAttributes = new { @class = "form-control" }, disabled = "disabled" })
                     @Html.ValidationMessageFor(model => model.userId, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -66,9 +72,80 @@
             </div>
         </div>
     }
+
+    <div>
+        <h4>Faces</h4>
+        <select id="mySelectID" name="select"> 
+        </select><br>
+        <input type="button" id="deleteBtn" value="刪除" /><br>
+        <img id="faceImg" />
+</div>
     
     <div>
         @Html.ActionLink("Back to List", "ManagementPage")
     </div>
+
+    <script>
+                $(document).ready(function() {
+                    read();
+                    $('#mySelectID').change(function() {
+                        readImg();
+                    });
+
+                    $('#deleteBtn').click(function () {
+                        var id = $('#mySelectID').val();
+                        if (confirm("是否刪除")) {
+                            $.blockUI({ message: '<h1><img src="/images/busy.gif" /> 刪除中請稍後</h1>' });
+                            $.ajax({
+                                type: "POST",
+                                url: "/FaceService/DeleteFace",
+                                data: {
+                                    id:id
+                                },
+                                dataType: "json",
+                                success: function (response) {
+                                    if (response.success) {
+                                        //$(tr).remove();
+                                        $('#mySelectID').empty().append('whatever');
+                                        $("#faceImg").hide();
+                                        read();
+                                        alert("刪除成功!");
+
+                                    }
+                                    else {
+                                        alert(response.message);
+                                    }
+                                    $.unblockUI();
+                                },
+                            });
+                            return false;
+                        }
+                    })
+                });
+
+                function read(){
+                    var ID = $("#userId").val();
+                    $.post('/FaceService/GetFacesListByUserID', { userID: ID },
+                        function (returnedData) {
+                            var $select = $('#mySelectID');
+                            var jsonData = $.parseJSON(returnedData);
+                            var $option = $("<option/>").attr("value", 0).text('請選擇臉部樣本');
+                            $select.append($option);
+                            $(jsonData).each(function (index, o) {
+                                var $option = $("<option/>").attr("value", o.Value).text(o.Text);
+                                $select.append($option);
+                            });
+                        });
+                }
+
+                function readImg(){
+                    var ID = $('#mySelectID').val();
+                    
+                    $.post('/FaceService/GetFaceByItID', { id: ID },
+                    function (returnedData) {
+                        $("#faceImg").attr('src', 'data:image/jpg;base64, ' + returnedData).show();
+                    });
+                }
+    </script>
 </body>
 </html>

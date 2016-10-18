@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    $("#files").kendoUpload({
+    $("#file").kendoUpload({
         multiple: false
     });
 });

@@ -95,7 +95,7 @@ namespace FaceService
         {
             if (_cropFaces == null) return _unknowFace;
             Image<Bgr, byte> convertImage = new Image<Bgr, byte>((Bitmap)(_cropFaces));
-            return convertImage.Resize(90, 90, Emgu.CV.CvEnum.Inter.Linear);
+            return convertImage.Resize(200, 200, Emgu.CV.CvEnum.Inter.Linear);
         }
 
         /// <summary>
@@ -125,7 +125,28 @@ namespace FaceService
         {
             ImageConverter converter = new ImageConverter();
             byte[] faceBlob = (byte[])converter.ConvertTo(_cropFaces, typeof(byte[]));
-            return _dataStoreAccess.SaveFace(username, faceBlob);
+            return _dataStoreAccess.SaveFace(username, "M", faceBlob);
+        }
+
+        /// <summary>
+        /// 將人名、臉部圖像傳入，並存入資料庫
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="faceBlob"></param>
+        public void SaveCropFace(string userName, string gender, Bitmap faceImg)
+        {
+            ImageConverter converter = new ImageConverter();
+            byte[] faceBlob = (byte[])converter.ConvertTo(faceImg, typeof(byte[]));
+
+            try
+            {
+                _dataStoreAccess.SaveFace(userName, gender, faceBlob);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
 
         /// <summary>
@@ -192,6 +213,16 @@ namespace FaceService
         }
 
         /// <summary>
+        /// 依userID取得資料庫中臉部所有臉部樣本ID
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public DataTable GetFacesListByUserId(int userID)
+        {
+            return _dataStoreAccess.GetFacesListByUserID(userID);
+        }
+
+        /// <summary>
         /// 取得faceSample
         /// </summary>
         /// <param name="Id"></param>
@@ -238,7 +269,7 @@ namespace FaceService
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public PersonInfo GetPersonInfo(int userId)
+        public DataTable GetPersonInfo(int userId)
         {
             return _dataStoreAccess.GetPersonInfo(userId);
         }

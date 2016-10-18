@@ -7,6 +7,7 @@ using System.Data.SQLite;
 using static FaceService.FaceRecognitionService;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace FaceService
 {
@@ -84,7 +85,7 @@ namespace FaceService
         /// <param name="username">人名</param>
         /// <param name="faceBlob">人臉影像</param>
         /// <returns></returns>
-        public String SaveFace(string userName, Byte[] faceBlob)
+        public String SaveFace(string userName, string gender, Byte[] faceBlob)
         {
             try
             {
@@ -93,6 +94,7 @@ namespace FaceService
                     exisitingUserId = GenerateUserId();
                     PersonInfo tempPerson = new PersonInfo {
                         userName = userName,
+                        gender = gender,
                         userId = exisitingUserId
                     };
                     CreatePersonInfo(tempPerson);
@@ -242,6 +244,36 @@ namespace FaceService
         }
 
         /// <summary>
+        /// 取得臉部資料清單
+        /// </summary>
+        /// <param name="userName">人名</param>
+        /// <returns></returns>
+        public DataTable GetFacesListByUserID(int userID)
+        {
+            var faces = new DataTable();
+            try
+            {
+                _sqLiteConnection.Open();
+                var query = @"  SELECT F.id AS Value,'Face' AS Text
+                                FROM faces AS F
+                                WHERE F.userId = @userId";
+                var cmd = new SQLiteCommand(query, _sqLiteConnection);
+                cmd.Parameters.AddWithValue("userId", userID);
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+                da.Fill(faces);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                _sqLiteConnection.Close();
+            }
+            return faces;
+        }
+
+        /// <summary>
         /// 取得人名對應的UserId
         /// </summary>
         /// <param name="userName"></param>
@@ -358,26 +390,27 @@ namespace FaceService
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public PersonInfo GetPersonInfo(int userId)
+        public DataTable GetPersonInfo(int userId)
         {
             DataSet ds = new DataSet();
-            var query = @"  SELECT * 
-                            FROM personInfo AS P
-                            WHERE P.userId = @userId LIMIT 1";
+            var query = @"  SELECT P.userId, P.userName, P.birthDate, P.tag, C.codeData AS gender
+                            FROM personInfo AS P, codeTable AS C
+                            WHERE P.userId = @userId AND C.codeType = 'Gender' AND C.codeValue = P.gender LIMIT 1";
             var cmd = new SQLiteCommand(query, _sqLiteConnection);
             cmd.Parameters.AddWithValue("userId", userId);
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
             da.Fill(ds);
 
-            var tempPerson = new PersonInfo {
-                userId = Convert.ToInt64(ds.Tables[0].Rows[0]["userId"]),
-                userName = ds.Tables[0].Rows[0]["userName"].ToString(),
-                gender = ds.Tables[0].Rows[0]["gender"].ToString(),
-                birthDate = Convert.ToDateTime(ds.Tables[0].Rows[0]["birthDate"].ToString()),
-                tag = ds.Tables[0].Rows[0]["tag"].ToString()
-            };
-
-            return tempPerson;
+            //var tempPerson = new PersonInfo
+            //{
+            //    userId = Convert.ToInt64(ds.Tables[0].Rows[0]["userId"]),
+            //    userName = ds.Tables[0].Rows[0]["userName"].ToString(),
+            //    gender = ds.Tables[0].Rows[0]["gender"].ToString(),
+            //    birthDate = Convert.ToDateTime(ds.Tables[0].Rows[0]["birthDate"].ToString()),
+            //    tag = ds.Tables[0].Rows[0]["tag"].ToString()
+            //};
+            ds.Tables[0].Rows[0]["birthDate"] = Convert.ToDateTime(ds.Tables[0].Rows[0]["birthDate"]).Date.ToString("yyyy/MM/dd");
+            return ds.Tables[0];
         }
 
         /// <summary>
@@ -419,7 +452,8 @@ namespace FaceService
             try
             {
                 _sqLiteConnection.Open();
-                var insertQuery = @"    DELETE
+                var insertQuery = @"    PRAGMA foreign_keys = 1;
+                                        DELETE
                                         FROM personInfo
                                         WHERE userId = @userId";
                 var cmd = new SQLiteCommand(insertQuery, _sqLiteConnection);

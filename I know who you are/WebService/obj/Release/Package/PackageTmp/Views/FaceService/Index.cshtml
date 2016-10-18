@@ -37,9 +37,10 @@
                 special handling on the server.
             </p>
         </div>
+        <h2 style="text-align:center">選擇一張照片上傳</h2>
         <form method="post" id="form" action="/FaceService/Submit" target="_blank">
             <div class="demo-section k-content">
-                <input name="files" id="files" type="file" accept=".jpg" />
+                <input name="file" id="file" type="file" accept="image/*" capture/>
                 <p style="padding-top: 1em; text-align: right">
                     <input type="submit" value="Submit" class="k-button k-primary" />
                 </p>

@@ -80,6 +80,7 @@ function deletePerson(e) {
     var dataItem = this.dataItem(tr);
     var grid = $("#grid").data("kendoGrid");
     if (confirm("是否刪除")) {
+        $.blockUI({ message: '<h1><img src="/images/busy.gif" /> 刪除中請稍後</h1>' });
         $.ajax({
             type: "POST",
             url: "/FaceService/DeletePerson",
@@ -92,10 +93,12 @@ function deletePerson(e) {
                     grid.dataSource.sync();
                     grid.dataSource.page(1);
                     alert("刪除成功!");
+                    
                 }
                 else {
                     alert(response.message);
                 }
+                $.unblockUI();
             },
         });
         return false;
